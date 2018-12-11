@@ -72,7 +72,7 @@ class QuadTreeBin {
     if (this.bins) {
       for (let b of this.bins)
         if (b.checkWithinExtent(x, y, radius))
-          items.splice(items.length, 0, ...b.getItemsInRadius(x, y, radius));
+          items.push(...b.getItemsInRadius(x, y, radius));
     } else {
       for (let item of this.items)
         if ((item.x - x) ** 2 + (item.y - y) ** 2 <= radiusSqrd)
